@@ -1,29 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { TripSetupForm } from "@/components/TripSetupForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "PackSwipe — Swipe Your Way Packed" },
+      { name: "description", content: "Replace tedious packing checklists with a fast, satisfying swipe-based flow. Pick a trip vibe and PackSwipe builds your list." },
+      { property: "og:title", content: "PackSwipe — Swipe Your Way Packed" },
+      { property: "og:description", content: "A swipe-first trip packing assistant. Never forget the essentials again." },
     ],
   }),
-  component: Index,
+  component: SetupPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+function SetupPage() {
+  return <TripSetupForm />;
 }
